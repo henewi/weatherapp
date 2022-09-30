@@ -2,6 +2,15 @@
 
 const api= '2c79c9ade4bd3fa5c29e7dbfcf365eee';
 
+
+const iconImg = document.getElementById('weather-icon');
+const loc = document.querySelector('#location');
+const tempC = document.querySelector('.c');
+const tempF = document.querySelector('.f');
+const desc = document.querySelector('.desc');
+const sunriseDOM = document.querySelector('.sunrise');
+const sunsetDOM = document.querySelector('.sunset');
+
 // event listener & geolocation data collection //
 window.addEventListener('load',() => {
     let long;
@@ -9,20 +18,20 @@ window.addEventListener('load',() => {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             long=position.coords.longitude;
-            lat=position.coords.lat;
-            const base = 'https://api.openweathermap.org/data/2.5/weather?lat=$%7Blat%7D&lon=$%7Blong%7D&appid=$%7Bapi%7D&units=metric';
+            lat=position.coords.latitude;
+            const base = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&long={long}&appid=2c79c9ade4bd3fa5c29e7dbfcf365eee';
 // fetching data //
             fetch(base)
                 .then((response) => {
                     return response.json
                 })
                 .then((data) => {
-                    console.log(data);
                     const {temp}=data.main;
-                    const {place}=data.name;
+                    const place=data.name;
                     const {description, icon}=data.weather[0];
                     const {sunrise, sunset}=data.sys;
-                    const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+                    const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+                    const fahrenheit = (temp*9)/5+32;
                     const sunriseGMT = new Date(sunrise * 1000);
                     const sunsetGMT = new Date(sunset * 1000);
 // interact with DOM 
@@ -37,5 +46,3 @@ window.addEventListener('load',() => {
         });
     }
 } );
-
-// query the API //

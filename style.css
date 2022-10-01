@@ -1,3 +1,5 @@
+
+
 /* styling the cheeky little animated background here - jamie has to be impressed at this */
 
 body {
@@ -30,6 +32,10 @@ body {
 	left: 50%;
 	-ms-transform: translate(-50%,-80%);
 	transform: translate(-50%,-80%);
+}
+
+#titletext {
+	padding: 1em;
 }
 
 #temp {

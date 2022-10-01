@@ -20,3 +20,26 @@ body {
 }
 
 /* Main section */
+
+.main {
+	margin: 0;
+	display: block;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%,-80%);
+	transform: translate(-50%,-80%);
+}
+
+#temp {
+	padding: 1em;
+}
+
+#humidity {
+	padding: 1em;
+}
+
+#sky {
+	padding: 1em;
+}

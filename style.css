@@ -7,53 +7,9 @@
 
 /* Main section */
 
-.main {
-	margin: 0;
-	display: block;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%,-80%);
-	transform: translate(-50%,-80%);
+.container {
+	width: min(100% - 15px, 840px);
+	margin-inline: auto;
+	padding: 100px;
+	background-color: rgb(0, 0, 0);
 }
-
-#search {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.192);
-	border-radius: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-#titletext {
-	padding: 1em;
-	font-weight: 800;
-}
-
-#temp {
-	padding: 1em;
-}
-
-#humidity {
-	padding: 1em;
-}
-
-#sky {
-	padding: 1em;
-}
-
-#backgroundbox {
-	background-color: rgba(0, 0, 0, 0.151);
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%,-77%);
-	transform: translate(-50%,-77%);
-	padding: 150px;
-	border-radius: 2em;
-}
-
-
